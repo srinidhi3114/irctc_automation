@@ -9,12 +9,9 @@ def scrape_irctc_trains():
 
         print("🚀 Opening IRCTC website...")
         page.goto("https://www.irctc.co.in/nget/train-search")
-
-        # ✅ Wait for the page to fully load and inputs to become visible
         page.wait_for_load_state("networkidle")
         page.wait_for_timeout(5000)
 
-        # ✅ Wait for From* input to be visible and handle popup
         from_input = page.locator("input[placeholder='From*']")
         from_input.wait_for(state="visible", timeout=10000)
         page.keyboard.press("Escape")
