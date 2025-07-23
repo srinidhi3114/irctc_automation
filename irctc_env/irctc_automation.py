@@ -80,7 +80,6 @@ def scrape_irctc_trains():
         print("❌ No train data extracted.")
 
 if __name__ == "__main__":
-    scrape_irctc_trains()
 
 
 
